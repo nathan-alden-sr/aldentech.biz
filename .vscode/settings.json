@@ -1,0 +1,6 @@
+{
+  "editor.formatOnSave": true,
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wordWrapColumn": 120,
+  "liveServer.settings.root": "/docs"
+}

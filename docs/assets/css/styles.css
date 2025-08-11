@@ -79,6 +79,8 @@ h6 {
     --theme-content-background-odd: var(--theme-content-background);
     --theme-navigation-link: var(--theme-color-white);
     --theme-navigation-link-hover: var(--theme-color-complementary);
+    --theme-payment-link: var(--theme-color-primary);
+    --theme-payment-link-hover: var(--theme-color-primary);
     --theme-links-link: var(--theme-color-black);
     --theme-links-link-hover: var(--theme-color-primary);
     --theme-links-fiverr-logo-url: url("../images/fiverr-green.svg");
@@ -96,6 +98,8 @@ h6 {
     --theme-content-background-odd: var(--theme-content-background);
     --theme-navigation-link: var(--theme-color-white);
     --theme-navigation-link-hover: var(--theme-color-complementary);
+    --theme-payment-link: var(--theme-color-complementary);
+    --theme-payment-link-hover: var(--theme-color-complementary);
     --theme-links-link: var(--theme-color-white);
     --theme-links-link-hover: var(--theme-color-complementary);
     --theme-links-fiverr-logo-url: url("../images/fiverr-white.svg");
@@ -165,6 +169,14 @@ h1 {
 
   &:nth-child(odd) {
     background-color: var(--theme-content-background-odd);
+  }
+
+  &.payment .link {
+    &:hover {
+      color: var(--theme-payment-link-hover);
+    }
+
+    color: var(--theme-payment-link);
   }
 
   &.links .link {
@@ -249,10 +261,8 @@ h1 {
   }
 }
 
+.section.payment .message,
 .section.contact .message {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5em;
   text-align: center;
 }
 
@@ -323,7 +333,7 @@ h1 {
 
     .links {
       display: grid;
-      grid-template-columns: repeat(2, min-content);
+      grid-template-columns: repeat(4, min-content);
       gap: 2em;
       padding: 0.5em 2em 0.5em 0.5em;
       justify-self: end;

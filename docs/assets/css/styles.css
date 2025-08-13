@@ -63,9 +63,11 @@ h6 {
 
 :root {
   --theme-color-primary: hsl(329, 50%, 20%);
-  --theme-color-complementary: yellow;
+  --theme-color-complementary: var(--theme-color-yellow);
   --theme-color-white: white;
   --theme-color-black: black;
+  --theme-color-red: red;
+  --theme-color-yellow: yellow;
 
   color-scheme: light dark;
 }
@@ -77,8 +79,10 @@ h6 {
     --theme-content-background: hsl(60, 30%, 80%);
     --theme-content-background-even: hsl(60, 30%, 70%);
     --theme-content-background-odd: var(--theme-content-background);
-    --theme-link: var(--theme-color-black);
-    --theme-link-hover: var(--theme-color-primary);
+    --theme-text-link: var(--theme-color-red);
+    --theme-image-link: var(--theme-color-black);
+    --theme-image-link-hover: var(--theme-color-red);
+    --theme-emphasis: var(--theme-color-primary);
   }
 }
 
@@ -89,8 +93,10 @@ h6 {
     --theme-content-background: hsl(0, 0%, 10%);
     --theme-content-background-even: hsl(0, 0%, 15%);
     --theme-content-background-odd: var(--theme-content-background);
-    --theme-link: var(--theme-color-white);
-    --theme-link-hover: var(--theme-color-complementary);
+    --theme-text-link: var(--theme-color-complementary);
+    --theme-image-link: var(--theme-color-white);
+    --theme-image-link-hover: var(--theme-color-complementary);
+    --theme-emphasis: hsl(200, 100%, 50%);
   }
 }
 
@@ -109,12 +115,7 @@ ol {
 }
 
 a {
-  text-decoration: inherit;
-}
-
-h1 {
-  font-size: inherit;
-  font-weight: inherit;
+  text-decoration: underline;
 }
 
 /* Apply theme */
@@ -141,17 +142,24 @@ h1 {
   &:nth-child(odd) {
     background-color: var(--theme-content-background-odd);
   }
+}
 
-  .link {
-    color: var(--theme-link-hover);
-  }
+.emphasis {
+  font-style: normal;
+  font-weight: bold;
+  color: var(--theme-emphasis);
+}
 
-  &.contact-me .contact {
-    &:hover {
-      color: var(--theme-link-hover);
-    }
+.text-link {
+  color: var(--theme-text-link);
+}
 
-    color: var(--theme-link);
+.image-link {
+  color: var(--theme-image-link);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--theme-image-link-hover);
   }
 }
 
@@ -160,15 +168,19 @@ h1 {
 .body {
   display: grid;
   grid-template-areas:
-    "navigation"
-    "content";
+    "header"
+    "main";
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;
   gap: 0;
 }
 
+.header {
+  grid-area: header;
+}
+
 .main {
-  grid-area: content;
+  grid-area: main;
 }
 
 .section {
@@ -178,7 +190,7 @@ h1 {
     gap: 0;
 
     .heading {
-      font-weight: 300;
+      font-weight: 400;
       text-align: center;
     }
   }
@@ -267,7 +279,7 @@ h1 {
         width: 5rem;
       }
 
-      .link {
+      .image-link {
         flex-direction: column;
       }
 

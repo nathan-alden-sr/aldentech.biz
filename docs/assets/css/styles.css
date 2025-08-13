@@ -77,15 +77,8 @@ h6 {
     --theme-content-background: hsl(60, 30%, 80%);
     --theme-content-background-even: hsl(60, 30%, 70%);
     --theme-content-background-odd: var(--theme-content-background);
-    --theme-navigation-link: var(--theme-color-white);
-    --theme-navigation-link-hover: var(--theme-color-complementary);
-    --theme-payment-link: var(--theme-color-primary);
-    --theme-payment-link-hover: var(--theme-color-primary);
-    --theme-links-link: var(--theme-color-black);
-    --theme-links-link-hover: var(--theme-color-primary);
-    --theme-links-fiverr-logo-url: url("../images/fiverr-green.svg");
-    --theme-contact-link: var(--theme-color-primary);
-    --theme-contact-link-hover: var(--theme-color-primary);
+    --theme-link: var(--theme-color-black);
+    --theme-link-hover: var(--theme-color-primary);
   }
 }
 
@@ -96,15 +89,8 @@ h6 {
     --theme-content-background: hsl(0, 0%, 10%);
     --theme-content-background-even: hsl(0, 0%, 15%);
     --theme-content-background-odd: var(--theme-content-background);
-    --theme-navigation-link: var(--theme-color-white);
-    --theme-navigation-link-hover: var(--theme-color-complementary);
-    --theme-payment-link: var(--theme-color-complementary);
-    --theme-payment-link-hover: var(--theme-color-complementary);
-    --theme-links-link: var(--theme-color-white);
-    --theme-links-link-hover: var(--theme-color-complementary);
-    --theme-links-fiverr-logo-url: url("../images/fiverr-white.svg");
-    --theme-contact-link: var(--theme-color-complementary);
-    --theme-contact-link-hover: var(--theme-color-complementary);
+    --theme-link: var(--theme-color-white);
+    --theme-link-hover: var(--theme-color-complementary);
   }
 }
 
@@ -133,7 +119,7 @@ h1 {
 
 /* Apply theme */
 
-.body-container {
+.body {
   font-family: "Noto Sans", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
@@ -142,24 +128,9 @@ h1 {
   background-color: var(--theme-content-background);
 }
 
-.navigation-container {
-  display: flex;
-  justify-content: center;
+.header {
   background-color: var(--theme-color-primary);
   color: var(--theme-color-white);
-
-  .link {
-    &:hover {
-      color: var(--theme-navigation-link-hover);
-    }
-
-    color: var(--theme-navigation-link);
-  }
-}
-
-.navigation {
-  width: 100%;
-  max-width: 1000px;
 }
 
 .main .section {
@@ -171,34 +142,22 @@ h1 {
     background-color: var(--theme-content-background-odd);
   }
 
-  &.payment .link {
-    &:hover {
-      color: var(--theme-payment-link-hover);
-    }
-
-    color: var(--theme-payment-link);
+  .link {
+    color: var(--theme-link-hover);
   }
 
-  &.links .link {
+  &.contact-me .contact {
     &:hover {
-      color: var(--theme-links-link-hover);
+      color: var(--theme-link-hover);
     }
 
-    color: var(--theme-links-link);
-  }
-
-  &.contact .link {
-    &:hover {
-      color: var(--theme-contact-link-hover);
-    }
-
-    color: var(--theme-contact-link);
+    color: var(--theme-link);
   }
 }
 
 /* Universal layout */
 
-.body-container {
+.body {
   display: grid;
   grid-template-areas:
     "navigation"
@@ -206,18 +165,6 @@ h1 {
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;
   gap: 0;
-}
-
-.navigation {
-  grid-area: navigation;
-  display: grid;
-  align-items: center;
-}
-
-.pfp-and-name {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .main {
@@ -235,118 +182,112 @@ h1 {
       text-align: center;
     }
   }
-}
 
-.section.links {
-  .grid {
-    display: grid;
-    align-items: center;
-    justify-items: center;
+  &.about-me .message {
+    display: flex;
+    flex-flow: column;
+    gap: 1rem;
   }
 
-  .link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5em;
+  &.payment .message {
+    display: flex;
+    flex-flow: column;
+    gap: 1rem;
+    text-align: center;
+  }
 
-    .subtitle {
-      text-align: center;
+  &.contact-me {
+    .contacts {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+
+      .contact {
+        display: inline-flex;
+        flex-flow: column;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .logo {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+      }
     }
   }
-
-  .logo {
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
-  }
-}
-
-.section.payment .message,
-.section.contact .message {
-  text-align: center;
 }
 
 @media only screen and (min-width: 320px) {
-  .navigation .links {
-    display: none;
-  }
-
-  .pfp-and-name {
-    gap: 1em;
-    padding: 1em;
+  .pfp-and-business-name {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding: 1rem;
 
     .pfp {
-      width: clamp(1em, 15vw, 6em);
-      height: clamp(1em, 15vw, 6em);
-      border-radius: calc(clamp(1em, 15vw, 6em) / 2);
+      --pfp-size: 6em;
+
+      width: var(--pfp-size);
+      height: var(--pfp-size);
+      border-radius: calc(var(--pfp-size) / 2);
     }
 
-    .name {
-      font-size: clamp(1em, 12vw, 6em);
+    .business-name {
+      font-size: 3rem;
+    }
+
+    .business-name-small {
+      font-size: 1.5rem;
     }
   }
 
   .section {
-    padding: 1em;
+    padding: 1rem;
 
     .content {
-      gap: 2em;
+      gap: 2rem;
     }
 
     .heading {
-      font-size: clamp(1em, 10vw, 5em);
-    }
-  }
-
-  .section.links {
-    .grid {
-      flex-direction: column;
-      gap: 5em;
+      font-size: 2rem;
     }
 
-    .logo-container {
-      width: clamp(5em, 30vw, 10em);
+    &.about-me .message {
+      text-align: justify;
     }
 
-    .link {
-      flex-direction: column;
+    &.contact-me {
+      .contacts {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .logo-container {
+        width: 5rem;
+      }
+
+      .link {
+        flex-direction: column;
+      }
+
+      .title {
+        font-size: 1.5rem;
+      }
     }
 
-    .title {
-      font-size: clamp(1em, 8vw, 4em);
+    .message {
+      text-align: justify;
     }
-
-    .subtitle {
-      font-size: clamp(1em, 6vw, 3em);
-    }
-  }
-
-  .contact .message {
-    font-size: clamp(1em, 6vw, 3em);
   }
 }
 
 @media only screen and (min-width: 600px) {
-  .navigation {
-    grid-template-columns: auto min-content;
-    gap: 0.5em;
-
-    .links {
-      display: grid;
-      grid-template-columns: repeat(4, min-content);
-      gap: 2em;
-      padding: 0.5em 2em 0.5em 0.5em;
-      justify-self: end;
-
-      .link {
-        font-weight: 300;
-        font-size: 1.2em;
-      }
-    }
-  }
-
-  .pfp-and-name {
-    justify-self: start;
+  .pfp-and-business-name {
+    display: flex;
+    flex-flow: row;
+    align-items: start;
+    justify-content: center;
     gap: 0.5em;
     padding: 0.5em;
 
@@ -358,59 +299,18 @@ h1 {
       border-radius: calc(var(--pfp-size) / 2);
     }
 
-    .name {
-      font-size: 1.5em;
-      text-wrap: nowrap;
+    .business-name,
+    .business-name-small {
+      font-size: 1.9em;
+      align-self: center;
     }
   }
 
-  .section .heading {
-    font-size: 2em;
-  }
-
-  .section.links {
-    .grid {
-      flex-direction: column;
-      grid-template-columns: repeat(1, 1fr);
-      align-items: center;
-      margin-left: auto;
-      margin-right: auto;
-      gap: 5em;
-    }
-
-    .logo-container {
-      width: clamp(5em, 30vw, 10em);
-      height: clamp(5em, 30vw, 10em);
-    }
-
-    .link {
-      flex-direction: column;
-    }
-
-    .title {
-      font-size: 1.8em;
-    }
-
-    .subtitle {
-      font-size: 1em;
-    }
-  }
-
-  .contact {
-    .content {
-      gap: 1em;
-    }
-
-    .message {
-      font-size: 1em;
-    }
-  }
-}
-
-@media only screen and (min-width: 800px) {
-  .section.links {
-    .grid {
-      grid-template-columns: repeat(1, 1fr);
+  .section.contact-me {
+    .contacts {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
     }
   }
 }

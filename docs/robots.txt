@@ -65,4 +65,4 @@ User-Agent: *
 DisallowAITraining: /
 Content-Usage: ai=n
 Allow: /
-Sitemap: https://nathanalden.com/sitemap.xml
+Sitemap: https://aldentech.biz/sitemap.xml

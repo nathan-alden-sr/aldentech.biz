@@ -41,10 +41,6 @@ h6 {
   overflow-wrap: break-word;
 }
 
-p {
-  text-wrap: pretty;
-}
-
 h1,
 h2,
 h3,
@@ -195,14 +191,16 @@ a {
     }
   }
 
-  &.about-me .message {
+  &.about-me .message,
+  &.contact-me .message {
     display: flex;
     flex-flow: column wrap;
     gap: 1rem;
   }
 
   &.personal-services .message,
-  &.business-services .message {
+  &.business-services .message,
+  &.contact-me .message {
     text-align: center;
   }
 
@@ -271,7 +269,8 @@ a {
       font-size: 2rem;
     }
 
-    &.about-me .message {
+    &.about-me .message,
+    &.contact-me .message {
       text-align: justify;
     }
 
@@ -295,10 +294,6 @@ a {
     &.payment .title,
     &.contact-me .title {
       font-size: 1.5rem;
-    }
-
-    .message {
-      text-align: justify;
     }
   }
 }

@@ -191,6 +191,18 @@ a {
     }
   }
 
+  &.about-me .hello {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 1.5rem;
+
+    .pfp {
+      border-radius: 2.5rem;
+    }
+  }
+
   &.about-me .message,
   &.contact-me .message {
     display: flex;
@@ -202,6 +214,11 @@ a {
   &.business-services .message,
   &.contact-me .message {
     text-align: center;
+  }
+
+  &.payment .payment-methods,
+  &.contact-me .contacts {
+    gap: 2rem;
   }
 
   &.payment .message {
@@ -235,26 +252,22 @@ a {
 }
 
 @media only screen and (min-width: 320px) {
-  .pfp-and-business-name {
-    display: flex;
-    flex-flow: column wrap;
-    align-items: center;
-    padding: 1rem;
+  .header {
+    --logo-size: 6em;
 
-    .pfp {
-      --pfp-size: 6em;
+    .logo-and-business-name {
+      display: flex;
+      flex-flow: column wrap;
+      align-items: center;
+      padding: 1rem;
 
-      width: var(--pfp-size);
-      height: var(--pfp-size);
-      border-radius: calc(var(--pfp-size) / 2);
-    }
+      .business-name {
+        font-size: 3rem;
+      }
 
-    .business-name {
-      font-size: 3rem;
-    }
-
-    .business-name-small {
-      font-size: 1.5rem;
+      .business-name-small {
+        font-size: 1.5rem;
+      }
     }
   }
 
@@ -277,8 +290,9 @@ a {
     &.payment .payment-methods,
     &.contact-me .contacts {
       display: flex;
-      flex-flow: column wrap;
-      gap: 1rem;
+      flex-flow: row wrap;
+      align-items: center;
+      justify-content: center;
     }
 
     &.payment .logo-container,
@@ -299,33 +313,28 @@ a {
 }
 
 @media only screen and (min-width: 600px) {
-  .pfp-and-business-name {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: start;
-    justify-content: center;
-    gap: 0.5rem;
-    padding: 0.5rem;
+  .header {
+    --logo-size: 3rem;
 
-    .pfp {
-      --pfp-size: 3rem;
+    .logo-and-business-name {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: start;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.5rem;
 
-      width: var(--pfp-size);
-      height: var(--pfp-size);
-      border-radius: calc(var(--pfp-size) / 2);
-    }
-
-    .business-name,
-    .business-name-small {
-      font-size: 1.9rem;
-      align-self: center;
+      .business-name,
+      .business-name-small {
+        font-size: 1.9rem;
+        align-self: center;
+      }
     }
   }
+}
 
-  .section.payment .payment-methods,
-  .section.contact-me .contacts {
-    flex-flow: row wrap;
-    justify-content: center;
-    gap: 2rem;
-  }
+.header .logo {
+  width: var(--logo-size);
+  height: var(--logo-size);
+  border-radius: calc(var(--logo-size) / 2);
 }

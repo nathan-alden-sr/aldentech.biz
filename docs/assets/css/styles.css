@@ -58,12 +58,15 @@ h6 {
 /* Theme constants */
 
 :root {
-  --theme-color-primary: hsl(329, 50%, 20%);
-  --theme-color-complementary: var(--theme-color-yellow);
   --theme-color-white: white;
   --theme-color-black: black;
   --theme-color-red: red;
   --theme-color-yellow: yellow;
+  --theme-color-purple: hsl(330, 50%, 20%);
+  --theme-color-tan-light: hsl(60, 30%, 80%);
+  --theme-color-tan-dark: hsl(60, 30%, 70%);
+  --theme-color-gray-light: hsl(0, 0%, 15%);
+  --theme-color-gray-dark: hsl(0, 0%, 10%);
 
   color-scheme: light dark;
 }
@@ -72,13 +75,12 @@ h6 {
 
 @media (prefers-color-scheme: light) {
   :root {
-    --theme-content-background: hsl(60, 30%, 80%);
-    --theme-content-background-even: hsl(60, 30%, 70%);
-    --theme-content-background-odd: var(--theme-content-background);
+    --theme-content-background: var(--theme-color-tan-light);
+    --theme-content-background-even: var(--theme-color-tan-dark);
     --theme-text-link: var(--theme-color-red);
     --theme-image-link: var(--theme-color-black);
     --theme-image-link-hover: var(--theme-color-red);
-    --theme-emphasis: var(--theme-color-primary);
+    --theme-emphasis: var(--theme-color-purple);
   }
 }
 
@@ -86,12 +88,11 @@ h6 {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --theme-content-background: hsl(0, 0%, 10%);
-    --theme-content-background-even: hsl(0, 0%, 15%);
-    --theme-content-background-odd: var(--theme-content-background);
-    --theme-text-link: var(--theme-color-complementary);
+    --theme-content-background: var(--theme-color-gray-dark);
+    --theme-content-background-even: var(--theme-color-gray-light);
+    --theme-text-link: var(--theme-color-yellow);
     --theme-image-link: var(--theme-color-white);
-    --theme-image-link-hover: var(--theme-color-complementary);
+    --theme-image-link-hover: var(--theme-color-yellow);
     --theme-emphasis: hsl(200, 100%, 50%);
   }
 }
@@ -126,17 +127,13 @@ a {
 }
 
 .header {
-  background-color: var(--theme-color-primary);
+  background-color: var(--theme-color-purple);
   color: var(--theme-color-white);
 }
 
 .main .section {
   &:nth-child(even) {
     background-color: var(--theme-content-background-even);
-  }
-
-  &:nth-child(odd) {
-    background-color: var(--theme-content-background-odd);
   }
 }
 

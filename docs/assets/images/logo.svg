@@ -8,7 +8,7 @@
    version="1.1"
    id="svg1"
    inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
-   sodipodi:docname="logo-dark-mode.svg"
+   sodipodi:docname="logo.svg"
    inkscape:export-filename="C:\Users\nathanaldensr\Desktop\at.png"
    inkscape:export-xdpi="14.740994"
    inkscape:export-ydpi="14.740994"
@@ -28,7 +28,7 @@
      inkscape:document-units="px"
      showgrid="false"
      inkscape:zoom="1"
-     inkscape:cx="360.5"
+     inkscape:cx="360"
      inkscape:cy="457.5"
      inkscape:window-width="2560"
      inkscape:window-height="1334"
@@ -152,7 +152,7 @@
        transform="translate(12.839046)" />
     <path
        id="text12"
-       style="font-size:400px;line-height:1.25;font-family:Anta;-inkscape-font-specification:Anta;text-align:center;letter-spacing:-30px;word-spacing:0px;text-anchor:middle;white-space:pre;fill:#80abff;stroke-width:0.275987;fill-opacity:1"
+       style="font-size:400px;line-height:1.25;font-family:Anta;-inkscape-font-specification:Anta;text-align:center;letter-spacing:-30px;word-spacing:0px;text-anchor:middle;white-space:pre;fill:#ffffff;stroke-width:0.275987;fill-opacity:1"
        inkscape:label="acronym"
        d="m 834.17451,132.0271 -29.88189,70.37917 h 13.20901 l 24.42228,-56.71902 10.80192,25.14265 h -16.25399 l -4.46174,10.39317 h 25.17748 l 9.0997,21.1832 h 13.20901 L 849.6144,132.0271 Z m 33.77158,0 v 10.39369 h 55.23953 V 132.0271 Z m 21.39663,14.48533 v 55.89384 h 12.44627 v -55.89384 z"
        sodipodi:nodetypes="cccccccccccccccccccccc" />

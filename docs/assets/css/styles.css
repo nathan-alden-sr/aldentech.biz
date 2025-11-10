@@ -67,6 +67,8 @@ h6 {
   --theme-color-tan-dark: hsl(60, 30%, 70%);
   --theme-color-gray-light: hsl(0, 0%, 15%);
   --theme-color-gray-dark: hsl(0, 0%, 10%);
+  --theme-color-fine-print-light: hsla(0, 0%, 0%, 30%);
+  --theme-color-fine-print-dark: hsla(0, 0%, 100%, 10%);
 
   color-scheme: light dark;
 }
@@ -81,6 +83,7 @@ h6 {
     --theme-image-link: var(--theme-color-black);
     --theme-image-link-hover: var(--theme-color-red);
     --theme-emphasis: var(--theme-color-purple);
+    --theme-fine-print: var(--theme-color-fine-print-light);
   }
 }
 
@@ -94,6 +97,7 @@ h6 {
     --theme-image-link: var(--theme-color-white);
     --theme-image-link-hover: var(--theme-color-yellow);
     --theme-emphasis: hsl(200, 100%, 50%);
+    --theme-fine-print: var(--theme-color-fine-print-dark);
   }
 }
 
@@ -134,6 +138,10 @@ a {
 .main .section {
   &:nth-child(even) {
     background-color: var(--theme-content-background-even);
+  }
+
+  &.footer {
+    color: var(--theme-fine-print);
   }
 }
 
@@ -307,6 +315,11 @@ a {
     &.payment .title,
     &.contact-me .title {
       font-size: 1.5rem;
+    }
+
+    &.footer {
+      text-align: center;
+      font-size: 0.7rem;
     }
   }
 }

@@ -77,8 +77,10 @@ h6 {
 
 @media (prefers-color-scheme: light) {
   :root {
+    --theme-content: var(--theme-color-black);
     --theme-content-background: var(--theme-color-tan-light);
     --theme-content-background-even: var(--theme-color-tan-dark);
+    --theme-message-content: oklch(from var(--theme-content) calc(l + 0.3) c h);
     --theme-text-link: var(--theme-color-red);
     --theme-image-link: var(--theme-color-black);
     --theme-image-link-hover: var(--theme-color-red);
@@ -91,8 +93,10 @@ h6 {
 
 @media (prefers-color-scheme: dark) {
   :root {
+    --theme-content: var(--theme-color-white);
     --theme-content-background: var(--theme-color-gray-dark);
     --theme-content-background-even: var(--theme-color-gray-light);
+    --theme-message-content: oklch(from var(--theme-content) calc(l - 0.2) c h);
     --theme-text-link: var(--theme-color-yellow);
     --theme-image-link: var(--theme-color-white);
     --theme-image-link-hover: var(--theme-color-yellow);
@@ -143,6 +147,10 @@ a {
   &.footer {
     color: var(--theme-fine-print);
   }
+
+  .content .message {
+    color: var(--theme-message-content);
+  }
 }
 
 .emphasis {
@@ -189,6 +197,8 @@ a {
     display: flex;
     flex-flow: column wrap;
     gap: 0;
+    max-width: 800px;
+    margin: auto;
 
     .heading {
       font-weight: 400;
@@ -196,7 +206,7 @@ a {
     }
   }
 
-  &.about-me .hello {
+  &.about-me .heading {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -289,9 +299,9 @@ a {
       font-size: 2rem;
     }
 
-    &.about-me .message,
-    &.contact-me .message {
+    &.about-me .message {
       text-align: justify;
+      text-align-last: center;
     }
 
     &.payment .payment-methods,

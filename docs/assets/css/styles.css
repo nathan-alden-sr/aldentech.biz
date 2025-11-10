@@ -144,12 +144,12 @@ a {
     background-color: var(--theme-content-background-even);
   }
 
-  &.footer {
-    color: var(--theme-fine-print);
-  }
-
   .content .message {
     color: var(--theme-message-content);
+  }
+
+  &.footer .message {
+    color: var(--theme-fine-print);
   }
 }
 
@@ -221,7 +221,8 @@ a {
   }
 
   &.about-me .message,
-  &.contact-me .message {
+  &.contact-me .message,
+  &.footer .message {
     display: flex;
     flex-flow: column wrap;
     gap: 1rem;

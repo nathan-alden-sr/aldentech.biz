@@ -222,6 +222,7 @@ a {
 
   &.about-me .message,
   &.contact-me .message,
+  &.pledge .message,
   &.footer .message {
     display: flex;
     flex-flow: column wrap;
@@ -229,12 +230,9 @@ a {
   }
 
   &.personal-services .message,
-  &.business-services .message {
-    text-align: left;
-  }
-
+  &.business-services .message,
   &.contact-me .message {
-    text-align: center;
+    text-align: left;
   }
 
   &.personal-services .services,
@@ -253,7 +251,6 @@ a {
     display: flex;
     flex-flow: column wrap;
     gap: 1rem;
-    text-align: center;
   }
 
   &.payment .payment-method,
@@ -308,11 +305,6 @@ a {
 
     .heading {
       font-size: 2rem;
-    }
-
-    &.about-me .message {
-      text-align: justify;
-      text-align-last: center;
     }
 
     &.payment .payment-methods,
